@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26/12/2017, 12:45:10 PM
+    Author     : Leo
+*/
+ body {
+      
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1em;
+	/*color: #333333;*/
+	margin-top: 1.2cm;
+	margin-right: 1.2cm;
+	margin-bottom: 1.2cm;
+	margin-left: 1.2cm
+        }
+        /* Default left, right, top, bottom margin is 2cm */
+@page { margin: 1cm } 
+
+/* First page, 10 cm margin on top */
+@page :first {
+  margin-top: 1cm;
+}
+
+/* Left pages, a wider margin on the left */
+@page :left {
+  margin-left: 1cm;
+  margin-right: 1cm;
+}
+
+@page :right {
+  margin-left: 1cm;
+  margin-right: 1.5cm;
+}
+ * {
+      -webkit-print-color-adjust: exact;
+    /*  print-color-adjust: exact;*/
+      
+   }
+   .saltopagina{
+       page-break-before:always;
+   }
+   .noimprimir{
+       display: none;
+   }
+   .imprimiroculto{
+       display:block;
+   }
+   
+   section {page-break-before: always;}
+ h1 {page-break-before: always;}
+ p {page-break-inside: avoid;}
+ 
+ img{
+    max-width: 100%;
+ }
+ a:after {
+    content: " (" attr(href) ")";
+    content: " ("atr attr(tel) ")";
+}
+.saltopagina1{
+    page-break-after: always;
+}
