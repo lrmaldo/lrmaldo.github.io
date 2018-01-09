@@ -386,7 +386,7 @@ document.getElementById('id_Salir').addEventListener('click', function() {
                   'carrera':'Ing. en Sistemas Computacionales',
                   'acerca': 'Hola a todos, mi nombre es Leonardo Maldonado López \n\
                              soy Ingeniero en Sistemas Computacionales, Desarrolllador en aplicaciones Android.\n\
-                             Comence con esta pasión de la programación desde que empece la carrara universitaría,\n\
+                             Comence con esta pasión de la programación desde que empece la carrara universitaria,\n\
                              me considero una persona responsable, dinámica y creativa, con facilidad de adaptación y capacidad de trabajar\n\
                              en equipo, en condiciones de alta presión, con iniciativa para resolver problemas eficientemente, lograr metas y objetivos',
                   'descargar':'Descargar CV',

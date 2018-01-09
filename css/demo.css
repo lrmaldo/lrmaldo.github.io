@@ -17,7 +17,7 @@
 }
 
 .cv-style-switch .switched-options {
-    position: relative;
+    position:static;
     width: 300px;
     text-align: left;
     padding: 20px;
@@ -67,8 +67,8 @@
 }
 
 .cv-style-switch ul.styles li {
-    display: inline-block;
-    margin-right: 5px;
+    display: block;
+    margin-right: 4px;
 }
 
 .cv-style-switch ul.styles li .lime,
