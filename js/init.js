@@ -431,6 +431,14 @@ document.getElementById('id_Salir').addEventListener('click', function() {
                   'mensaje':'Mensaje*',
                   'enviar':'Enviar',
                   'telefono':'Teléfono',
+                  'docente':'Docente de Informática',
+                  'ESFM':'Escuela Secundaria Francisco de Montejo',
+                  'fechadocente':'January 2018 - News',
+                  'descripcionDocente':'Soy Docente en esta Escuela Secundaria, imparto clases de informática'+ 
+                  'a los tres niveles de secundaria de un total de 53 alumnos, enseño temas destacados como son la ofimática,'+
+                  'introducción a la programación para este nivel educativo y principio de electrónica,además implemento la plataforma Google Classroom'+
+                  'para reforzar sus conocimientos en el area de la informática, entre el equipo de trabajo con los demás docentes'+
+                  'estoy en desarrollo de un sistema para medir el aprendizaje de lectura, producción de lectura y razomanamiento matemáticos'
               },
               'ing':{
                   'carrera':'Engineer in Computer Systems', 
@@ -477,6 +485,15 @@ document.getElementById('id_Salir').addEventListener('click', function() {
                   'mensaje':'Message*',
                   'enviar':'Submit',
                   'telefono':'Phone',
+                  'docente':'Computer Teacher',
+                  'ESFM':'Francisco de Montejo High School',
+                  'fechadocente':'January 2018 - News',
+                  'descripcionDocente': 'I am a teacher in this Secondary School, I teach computer classes to the three secondary'+
+                  'levels of a total of 53 students, I teach outstanding topics such as office automation,'+
+                  'introduction to programming for this educational level and electronic principle, I also'+ 
+                 'implement the Google platform Classroom to reinforce their'+
+                 'knowledge in the area of ​​computer science, among the team working with other teachers'+
+                'I am developing a system to measure reading learning, reading production and mathematical reasoning'
               }
               
             };
@@ -493,3 +510,5 @@ document.getElementById('id_Salir').addEventListener('click', function() {
                  });
             });
            
+
+            
