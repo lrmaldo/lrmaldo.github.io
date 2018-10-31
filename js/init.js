@@ -67,10 +67,12 @@ var handleSignedInUser = function(user) {
   var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv_ing_Leonardo.pdf?alt=media&token=d289b2dc-1a1f-44bc-b370-3ea721bc7fbe');
   
   //var gsReference = storage.refFromURL('gs://cv-leo.appspot.com/cv_ing_Leonardo.pdf');
+  // Español PDF
   var img = document.getElementById('descarga');
-  img.href = 'https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv%2FCV%20Leonardo%20Maldonado_ES.pdf?alt=media&token=1574f92d-2008-484f-98ac-de4990a3ce72';
+  img.href = 'https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv%2FCV%20Leonardo%20Maldonado_ES.pdf?alt=media&token=161cf0c0-00a4-452c-aa8c-92ea19d00f7f';
   img.download ="cv.pdf";
   
+  // Ingles
   var img1 = document.getElementById('descarga1');
   img1.href ='https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv%2FCV%20Leonardo%20Maldonado_IN.pdf?alt=media&token=20264d4c-9652-47ff-a2ea-a4dca452a37e';
 //  storageRef.child('cv_ing_Leonardo.pdf').getDownloadURL().then(function(url) {
