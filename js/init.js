@@ -480,7 +480,7 @@ document.getElementById('id_Salir').addEventListener('click', function() {
                   'institulo':'Instituto Tecnológico Superior de Valladolid',
                   'descripcionembajador':'Develop knowledge of entrepreneurship, trademark registration before the IMPI (Mexican Institute of Intellectual Property), business model, financial plan, gave training to a group of 10 entrepreneurs where it consisted in guiding them to use an e-learning platform of INADEM, Auxiliary in the incubator.',
                   'fechaplatzi':'December 2016 –April 2017',
-                  'educacion':'Educatión',
+                  'educacion':'Education',
                   'contacto':'Contact',
                   'nombre':'Name*',
                   'asunto':'Subject*',
