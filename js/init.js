@@ -72,7 +72,7 @@ var handleSignedInUser = function(user) {
   img.download ="cv.pdf";
   
   var img1 = document.getElementById('descarga1');
-  img1.href ='https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv%2FCV%20Leonardo%20Maldonado%20IN.pdf?alt=media&token=a9f5b30c-3a24-4eba-ab9f-d29dbf3e70c2';
+  img1.href ='https://firebasestorage.googleapis.com/v0/b/cv-leo.appspot.com/o/cv%2FCV%20Leonardo%20Maldonado_IN.pdf?alt=media&token=20264d4c-9652-47ff-a2ea-a4dca452a37e';
 //  storageRef.child('cv_ing_Leonardo.pdf').getDownloadURL().then(function(url) {
 //  // `url` is the download URL for 'images/stars.jpg'
 //
