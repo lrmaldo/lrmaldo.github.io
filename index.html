@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Maldonado - Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50">
+    <!-- Sidebar Navigation -->
+    <nav class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50" id="sidebar">
+        <div class="flex flex-col h-full">
+            <div class="p-6">
+                <img src="img/yo1.jpg" alt="Leonardo Maldonado" class="w-32 h-32 rounded-full mx-auto ring-2 ring-blue-500 p-1">
+                <h1 class="text-xl font-bold text-center mt-4">Leonardo Maldonado</h1>
+                <p class="text-gray-600 text-sm text-center">Full Stack Developer</p>
+            </div>
+            <ul class="flex-1 py-4">
+                <li class="hover:bg-slate-50">
+                    <a href="#home" class="block px-6 py-3 text-gray-600 hover:text-blue-600">Inicio</a>
+                </li>
+                <li class="hover:bg-slate-50">
+                    <a href="#about" class="block px-6 py-3 text-gray-600 hover:text-blue-600">Sobre mí</a>
+                </li>
+                <li class="hover:bg-slate-50">
+                    <a href="#experience" class="block px-6 py-3 text-gray-600 hover:text-blue-600">Experiencia</a>
+                </li>
+                <li class="hover:bg-slate-50">
+                    <a href="#skills" class="block px-6 py-3 text-gray-600 hover:text-blue-600">Habilidades</a>
+                </li>
+                <li class="hover:bg-slate-50">
+                    <a href="#portfolio" class="block px-6 py-3 text-gray-600 hover:text-blue-600">Portafolio</a>
+                </li>
+            </ul>
+            <div class="p-6 border-t">
+                <div class="flex justify-center space-x-4">
+                    <a href="https://github.com/lrmaldo" class="text-gray-400 hover:text-gray-900">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lrmaldo/" class="text-gray-400 hover:text-blue-600">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:lrmaldo@gmail.com" class="text-gray-400 hover:text-red-600">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button class="fixed lg:hidden top-4 right-4 z-50 bg-white p-2 rounded-lg shadow-lg" id="menu-toggle">
+        <i class="fas fa-bars text-gray-600"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="lg:ml-64 min-h-screen">
+        <!-- Hero Section -->
+        <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 text-white px-4">
+            <div class="max-w-3xl text-center">
+                <style>
+                    @keyframes softFade {
+                        0% { opacity: 0.8; }
+                        50% { opacity: 1; }
+                        100% { opacity: 0.8; }
+                    }
+                    .soft-fade { animation: softFade 3s ease-in-out infinite; }
+                </style>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 soft-fade">Hola, soy Leonardo</h1>
+                <p class="text-xl md:text-2xl text-blue-100 mb-8">Desarrollador Full Stack & Administrador de Sistemas</p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a href="#portfolio" class="bg-white text-blue-600 px-8 py-3 rounded-full hover:bg-opacity-90 transition">
+                        Ver Portafolio
+                    </a>
+                    <a href="#contact" class="border-2 border-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-600 transition">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Sobre mí</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-gray-600 leading-relaxed">
+                            Soy una persona responsable, dinámica y creativa, con facilidad para adaptarme a diferentes entornos y trabajar eficazmente en equipo, incluso bajo alta presión.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Cuento con una fuerte iniciativa y habilidades para resolver problemas de manera eficiente, enfocándome en cumplir y superar las metas y objetivos de la empresa.
+                        </p>
+                        <div class="flex gap-4">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-code text-blue-600"></i>
+                                <span>Desarrollo Web</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-mobile-alt text-blue-600"></i>
+                                <span>Apps Móviles</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-server text-blue-600"></i>
+                                <span>Sistemas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-blue-100 rounded-lg transform rotate-3"></div>
+                        <img src="img/yo1.jpg" alt="Leonardo Maldonado" class="relative rounded-lg shadow-lg">
+                        <div class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg">
+                            <p class="font-semibold">+4 años de experiencia</p>
+                            <p class="text-sm text-gray-600">Full Stack Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Cards -->
+        <section id="experience" class="py-20 px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Experiencia</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Experiencia Card 1 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition p-6">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Administrador de Sistemas</h3>
+                    <p class="text-gray-600 mb-4">Sattlink.com</p>
+                    <span class="text-sm text-gray-500">2020 - Presente</span>
+                </div>
+                <!-- Más cards de experiencia... -->
+            </div>
+        </section>
+
+        <!-- Skills Grid -->
+        <section id="skills" class="py-20 px-4 bg-white">
+            <h2 class="text-3xl font-bold text-center mb-12">Habilidades</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+                <div class="skill-card">
+                    <i class="fab fa-html5 text-orange-500"></i>
+                    <span>HTML5</span>
+                </div>
+                <!-- Más skills... -->
+            </div>
+        </section>
+
+        <!-- Portfolio Gallery -->
+        <section id="portfolio" class="py-20 px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Portafolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Portfolio items... -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('-translate-x-full');
+        });
+    </script>
+</body>
+</html>
