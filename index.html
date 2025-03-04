@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="/styles.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body class="bg-slate-50">
     <!-- Sidebar Navigation -->
@@ -84,39 +86,39 @@
         <!-- About Section -->
         <section id="about" class="py-20 px-4 bg-white">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-12">Sobre mí</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <p class="text-gray-600 leading-relaxed">
-                            Soy una persona responsable, dinámica y creativa, con facilidad para adaptarme a diferentes entornos y trabajar eficazmente en equipo, incluso bajo alta presión.
-                        </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Cuento con una fuerte iniciativa y habilidades para resolver problemas de manera eficiente, enfocándome en cumplir y superar las metas y objetivos de la empresa.
-                        </p>
-                        <div class="flex gap-4">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-code text-blue-600"></i>
-                                <span>Desarrollo Web</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-mobile-alt text-blue-600"></i>
-                                <span>Apps Móviles</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-server text-blue-600"></i>
-                                <span>Sistemas</span>
-                            </div>
-                        </div>
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Sobre mí</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right" data-aos-delay="200">
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    Soy una persona responsable, dinámica y creativa, con facilidad para adaptarme a diferentes entornos y trabajar eficazmente en equipo, incluso bajo alta presión.
+                </p>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    Cuento con una fuerte iniciativa y habilidades para resolver problemas de manera eficiente, enfocándome en cumplir y superar las metas y objetivos de la empresa.
+                </p>
+                <div class="flex gap-4 text-lg">
+                    <div class="flex items-center gap-2">
+                    <i class="fas fa-code text-blue-600"></i>
+                    <span>Desarrollo Web</span>
                     </div>
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-blue-100 rounded-lg transform rotate-3"></div>
-                        <img src="img/yo1.jpg" alt="Leonardo Maldonado" class="relative rounded-lg shadow-lg">
-                        <div class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg">
-                            <p class="font-semibold">+4 años de experiencia</p>
-                            <p class="text-sm text-gray-600">Full Stack Development</p>
-                        </div>
+                    <div class="flex items-center gap-2">
+                    <i class="fas fa-mobile-alt text-blue-600"></i>
+                    <span>Apps Móviles</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                    <i class="fas fa-server text-blue-600"></i>
+                    <span>Sistemas</span>
                     </div>
                 </div>
+                </div>
+                <div class="relative">
+                <div class="absolute -inset-4 bg-blue-100 rounded-lg transform rotate-3"></div>
+                <img src="img/yo1.jpg" alt="Leonardo Maldonado" class="relative rounded-lg shadow-lg">
+                <div class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg">
+                    <p class="font-semibold text-lg">+4 años de experiencia</p>
+                    <p class="text-base text-gray-600">Full Stack Development</p>
+                </div>
+                </div>
+            </div>
             </div>
         </section>
 
@@ -129,11 +131,30 @@
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-code text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Administrador de Sistemas</h3>
+                    <h3 class="text-xl font-semibold mb-2">Administrador de Sistemas y Desarrollador de Software</h3>
                     <p class="text-gray-600 mb-4">Sattlink.com</p>
+                    <div class="text-gray-600 text-sm space-y-2 mb-4">
+                        <p><i class="fas fa-check text-blue-500 mr-2"></i>Desarrollo de aplicaciones web y móviles como líder del área</p>
+                        <p><i class="fas fa-check text-blue-500 mr-2"></i>Mantenimiento de infraestructura: servidores web, DNS y virtualización</p>
+                        <p><i class="fas fa-check text-blue-500 mr-2"></i>Desarrollo de sistema de cobros integrado con Mikrotik API</p>
+                    </div>
                     <span class="text-sm text-gray-500">2020 - Presente</span>
                 </div>
-                <!-- Más cards de experiencia... -->
+
+                <!-- Experiencia Card 2 -->
+                <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition p-6">
+                    <div class="text-green-600 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Docente de Tecnologías</h3>
+                    <p class="text-gray-600 mb-4">Escuela Secundaria Francisco de Montejo</p>
+                    <div class="text-gray-600 text-sm space-y-2 mb-4">
+                        <p><i class="fas fa-check text-green-500 mr-2"></i>Lideré proyectos educativos enfocados en la integración de nuevas tecnologías</p>
+                        <p><i class="fas fa-check text-green-500 mr-2"></i>Impartí clases de informática a tres niveles educativos</p>
+                        <p><i class="fas fa-check text-green-500 mr-2"></i>Desarrollé un plan de estudios innovador</p>
+                    </div>
+                    <span class="text-sm text-gray-500">Enero 2018 - Febrero 2020</span>
+                </div>
             </div>
         </section>
 
@@ -141,21 +162,170 @@
         <section id="skills" class="py-20 px-4 bg-white">
             <h2 class="text-3xl font-bold text-center mb-12">Habilidades</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
-                <div class="skill-card">
-                    <i class="fab fa-html5 text-orange-500"></i>
-                    <span>HTML5</span>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                    <span class="block text-sm">HTML5</span>
                 </div>
-                <!-- Más skills... -->
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+                    <span class="block text-sm">CSS3</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-js text-4xl text-yellow-500 mb-2"></i>
+                    <span class="block text-sm">JavaScript</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-php text-4xl text-purple-500 mb-2"></i>
+                    <span class="block text-sm">PHP</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-laravel text-4xl text-red-500 mb-2"></i>
+                    <span class="block text-sm">Laravel</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
+                    <span class="block text-sm">React</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-node text-4xl text-green-600 mb-2"></i>
+                    <span class="block text-sm">Node.js</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-python text-4xl text-blue-500 mb-2"></i>
+                    <span class="block text-sm">Python</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
+                    <span class="block text-sm">Git</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fas fa-database text-4xl text-gray-600 mb-2"></i>
+                    <span class="block text-sm">MySQL</span>
+                </div>
+                <div class="skill-card bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition text-center">
+                    <i class="fas fa-server text-4xl text-gray-700 mb-2"></i>
+                    <span class="block text-sm">Linux</span>
+                </div>
             </div>
         </section>
 
         <!-- Portfolio Gallery -->
-        <section id="portfolio" class="py-20 px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Portafolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <!-- Portfolio items... -->
+<section id="portfolio" class="py-20 px-4 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Portafolio</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- Sattlink ERP -->
+        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-48 overflow-hidden">
+                <img src="img/sattlink.jpg" alt="Sattlink ERP" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </div>
-        </section>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">Sattlink ERP</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    Plataforma integral para la gestión de ISPs, con módulos para clientes, facturación y reportes.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Laravel</span>
+                    <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-xs font-medium">MySQL</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">API</span>
+                </div>
+                <a href="https://sattlink.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- i-Free Hotspot -->
+        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-48 overflow-hidden">
+                <img src="img/ifree.jpg" alt="i-Free Hotspot" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">i-Free Hotspot</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    Portal cautivo en Mikrotik con monetización mediante publicidad interactiva.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs font-medium">JavaScript</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Node.js</span>
+                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-medium">Mikrotik</span>
+                </div>
+                <a href="https://i-free.com.mx" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Fichas Sattlink -->
+        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="img/fichas.jpg" alt="Fichas Sattlink" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">Fichas Sattlink</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    Web App progresiva para administración de Hotspots y generación de fichas.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">React</span>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs font-medium">PWA</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">VPN</span>
+                </div>
+                <a href="https://fichas.sattlink.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Gruas Frontera -->
+        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="relative h-48 overflow-hidden">
+                <img src="img/gruas.jpg" alt="Grúas Frontera" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">Grúas Frontera</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    Sistema de gestión empresarial para control de inventarios, siniestros y servicios particulares.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-medium">Laravel</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Telegram Bot</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Bootstrap</span>
+                </div>
+                <a href="https://gruasfrontera.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Ciber Ramses -->
+        <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="relative h-48 overflow-hidden">
+                <img src="img/ramses.jpg" alt="Ciber Ramses" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">Ciber Ramses</h3>
+                <p class="text-gray-600 text-sm mb-4">
+                    Plataforma e-commerce para venta de productos en Jalapa de Díaz, con gestión de inventarios y pedidos.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">PHP</span>
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs font-medium">JavaScript</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">MySQL</span>
+                </div>
+                <a href="https://ciberamses.com.mx" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
 
     <script>
@@ -163,6 +333,9 @@
         document.getElementById('menu-toggle').addEventListener('click', () => {
             document.getElementById('sidebar').classList.toggle('-translate-x-full');
         });
+
+        // Initialize AOS
+        AOS.init();
     </script>
 </body>
 </html>
