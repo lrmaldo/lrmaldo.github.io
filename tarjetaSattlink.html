@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación - Sattlink Internet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sattlink': '#f7430e',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        .tarjeta {
+            width: 120mm;
+            height: 67mm;
+            position: relative;
+        }
+        
+        .logo-sattlink {
+            height: 2rem;
+            max-width: 200px;
+            object-fit: contain;
+        }
+        
+        .qr-container {
+            width: 6rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Botón de descarga -->
+        <div class="flex gap-4 justify-center">
+            <button onclick="generarImagenes()" class="bg-sattlink text-white px-6 py-2 rounded-lg shadow-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+                <i class="fas fa-download"></i>
+                Descargar como Imágenes
+            </button>
+        </div>
+
+        <!-- Contenedor de tarjetas -->
+        <div class="flex flex-col items-center gap-8" id="tarjetas">
+            <!-- Tarjeta Frontal -->
+            <div class="tarjeta bg-white shadow-xl rounded-lg overflow-hidden flex" id="tarjetaFrontal">
+                <div class="w-2 bg-sattlink"></div>
+                <div class="flex-1 p-4 flex justify-between items-start">
+                    <div class="flex-1 space-y-3">
+                        <!-- Logo -->
+                        <div>
+                            <img src="https://sattlink.com/img/Sattlink-logo-nuevo.png" alt="Sattlink Internet" 
+                                class="logo-sattlink">
+                        </div>
+                        
+                        <!-- Información personal -->
+                        <div>
+                            <h2 class="text-lg font-bold text-gray-800">Leonardo Maldonado</h2>
+                            <p class="text-sattlink font-medium text-sm leading-tight">
+                                Administrador de Sistemas y Desarrollo de Software
+                            </p>
+                        </div>
+
+                        <!-- Información de contacto -->
+                        <div class="contact-info text-sm">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-phone w-4 text-sattlink"></i>
+                                <span class="text-gray-600">+52 287 228 1277</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-envelope w-4 text-sattlink"></i>
+                                <span class="text-gray-600">leonardo.maldonado@sattlink.com</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-globe w-4 text-sattlink"></i>
+                                <span class="text-gray-600">sattlink.com</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt w-4 text-sattlink"></i>
+                                <span class="text-gray-600">Tuxtepec, Oaxaca México</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QR Code -->
+                    <div class="qr-container flex-shrink-0" id="qrcode"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Trasera -->
+            <div class="tarjeta bg-gradient-to-br from-sattlink to-orange-500 shadow-xl rounded-lg p-6 text-white" id="tarjetaTrasera">
+                <div class="h-full flex flex-col items-center justify-center">
+                    <div class="text-4xl mb-4"> <!-- Iconos más grandes -->
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-2">Internet de Alta Velocidad</h2>
+                    <p class="text-base text-white/90 mb-8">Conexión Confiable y Estable</p>
+                    
+                    <div class="flex justify-center gap-12">
+                        <div class="text-center">
+                            <i class="fas fa-headset text-3xl mb-2"></i>
+                            <p class="text-sm">Servicio Garantizado</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-bolt text-3xl mb-2"></i>
+                            <p class="text-sm">Alta Velocidad</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt text-3xl mb-2"></i>
+                            <p class="text-sm">Seguro</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const phone = "522872281277";
+            const message = "Hola, me interesa contratar internet de Sattlink";
+            const webUrl = "https://sattlink.com";
+            const whatsappUrl = `https://wa.me/${phone}`;
+
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+
+            new QRCode(qrContainer, {
+                text: whatsappUrl,
+                width: 120,     // QR más grande
+                height: 120,    // QR más grande
+                colorDark: "#f7430e",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        };
+
+        async function generarImagenes() {
+            const tarjetas = ['tarjetaFrontal', 'tarjetaTrasera'];
+
+            for (let i = 0; i < tarjetas.length; i++) {
+                const elemento = document.getElementById(tarjetas[i]);
+                const canvas = await html2canvas(elemento, {
+                    scale: 2,
+                    backgroundColor: null
+                });
+
+                const imagen = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = imagen;
+                link.download = `sattlink-tarjeta-${i + 1}.png`;
+                link.click();
+            }
+        }
+    </script>
+</body>
+
+</html>
