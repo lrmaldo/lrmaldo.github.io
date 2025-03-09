@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Maldonado;Leonardo;;;
+FN:Leonardo Maldonado
+TITLE:Full Stack Developer & System Admin
+ORG:Sattlink Internet
+EMAIL;type=INTERNET;type=WORK:lrmaldo@gmail.com
+TEL;type=CELL:+529851050030
+TEL;type=WORK:+529851050030
+ADR;type=WORK:;;Valladolid;Yucatán;;97000;México
+URL;type=WORK:https://github.com/lrmaldo
+URL;type=LinkedIn:https://www.linkedin.com/in/lrmaldo/
+PHOTO;ENCODING=b;TYPE=JPEG:[Base64 encoded photo data]
+NOTE:Desarrollador web Full Stack y administrador de sistemas
+END:VCARD
