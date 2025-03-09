@@ -33,90 +33,131 @@
         .tarjeta {
             width: 90mm;
             height: 50mm;
+            position: relative;
+        }
+
+        .left-gradient-border {
+            position: relative;
+            background: white;
+        }
+
+        .left-gradient-border::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #2563eb, #4f46e5);
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
         }
 
         #downloadArea {
             display: none;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(to right, #2563eb, #4f46e5);
+            z-index: -1;
+            border-radius: 0.5rem;
         }
     </style>
 </head>
 
 <body class="bg-gray-100 min-h-screen p-8">
     <div class="max-w-4xl mx-auto space-y-8">
-        <!-- Botones de acción -->
+        <!-- Botón de descarga -->
         <div class="flex gap-4 justify-center">
-            <button onclick="generarImagenes()"
-                class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+            <button onclick="generarImagenes()" 
+                class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full shadow-lg hover:opacity-90 transition-opacity flex items-center gap-2">
                 <i class="fas fa-download"></i>
-                Descargar como Imágenes
+                Descargar Tarjeta
             </button>
         </div>
 
         <!-- Contenedor de tarjetas -->
         <div class="flex flex-col items-center gap-8" id="tarjetas">
             <!-- Tarjeta Frontal -->
-            <div class="tarjeta bg-white shadow-xl rounded-lg overflow-hidden flex" id="tarjetaFrontal">
-                <div class="w-2 bg-gradient-to-b from-blue-600 to-purple-600"></div>
-                <div class="flex-1 p-4 flex">
-                    <div class="flex-1">
-                        <h1 class="text-xl font-bold text-gray-800">Ing.Leonardo Maldonado</h1>
-                        <p class="text-blue-600 font-medium text-sm">Full Stack Developer</p>
-                        
+            <div class="tarjeta left-gradient-border rounded-lg overflow-hidden shadow-lg" id="tarjetaFrontal">
+                <div class="h-full w-full p-6 flex items-center justify-between bg-white">
+                    <!-- Contenido principal -->
+                    <div class="flex-1 space-y-4 pr-4">
+                        <!-- Nombre y título -->
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <span class="text-blue-600 font-mono text-sm bg-blue-50 px-2 py-1 rounded-md">&lt;/&gt;</span>
+                                <h1 class="text-lg font-bold text-gray-800">Ing. Leonardo Maldonado</h1>
+                            </div>
+                            <p class="text-blue-600 font-medium text-sm ml-12">Full Stack Developer</p>
+                        </div>
 
-                        <div class="mt-2 space-y-1">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="fas fa-envelope w-4 mr-2 text-blue-600"></i>
+                        <!-- Información de contacto -->
+                        <div class="ml-12 space-y-2">
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <i class="fas fa-envelope text-blue-600"></i>
                                 <span>lrmaldo@gmail.com</span>
                             </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="fab fa-github w-4 mr-2 text-blue-600"></i>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <i class="fab fa-github text-blue-600"></i>
                                 <span>github.com/lrmaldo</span>
                             </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="fas fa-phone w-4 mr-2 text-blue-600"></i>
+                            <div class="flex items-center gap-3 text-sm text-gray-600">
+                                <i class="fas fa-phone text-blue-600"></i>
                                 <span>+529851050030</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- QR generado dinámicamente -->
-                    <div class="w-24 flex items-center justify-center" id="qrcode"></div>
+                    <!-- QR Code -->
+                    <div class="bg-gray-50 p-2 rounded-lg">
+                        <div class="w-20 h-20" id="qrcode"></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Tarjeta Trasera -->
-            <div class="tarjeta bg-gradient-to-br from-blue-600 to-purple-600 shadow-xl rounded-lg p-4 text-white flex items-center justify-center"
-                id="tarjetaTrasera">
-                <div class="text-center">
-                    <div class="text-3xl mb-2">
-                        <i class="fas fa-code"></i>
+            <div class="tarjeta left-gradient-border rounded-lg overflow-hidden shadow-lg" id="tarjetaTrasera">
+                <div class="relative h-full flex flex-col items-center justify-center bg-white p-6">
+                    <div class="space-y-4 text-center">
+                        <div class="text-4xl text-blue-600">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-800">Desarrollo Web & Móvil</h2>
+                            <p class="text-blue-600 text-sm mt-2">Soluciones tecnológicas a medida</p>
+                        </div>
+                        <!-- Skills -->
+                        <div class="flex justify-center gap-6 mt-4">
+                            <i class="fab fa-react text-2xl text-blue-500"></i>
+                            <i class="fab fa-node-js text-2xl text-green-600"></i>
+                            <i class="fab fa-php text-2xl text-indigo-600"></i>
+                            <i class="fab fa-python text-2xl text-blue-600"></i>
+                        </div>
                     </div>
-                    <h2 class="text-lg font-bold">Desarrollo Web & Móvil</h2>
-                    <p class="text-sm text-blue-100">Soluciones tecnológicas a medida</p>
                 </div>
             </div>
         </div>
-
-        <!-- Área de descarga oculta -->
-        <div id="downloadArea"></div>
     </div>
 
     <script>
-        // Generar QR code al cargar la página
         window.onload = function () {
-            const webUrl = "https://lrmaldo.github.io/tarjetaPresentacion.html";
-            
-            // Crear nuevo elemento div para el QR
+            const webUrl = "https://lrmaldo.github.io";
             const qrContainer = document.getElementById('qrcode');
-            
-            // Limpiar contenedor por si acaso
             qrContainer.innerHTML = '';
             
-            // Generar nuevo QR
             new QRCode(qrContainer, {
                 text: webUrl,
-                width: 100,
-                height: 100,
+                width: 80,
+                height: 80,
                 colorDark: "#2563eb",
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel.H
