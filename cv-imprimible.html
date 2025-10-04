@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo Maldonado - CV</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 20mm;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 297mm;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2563eb;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid #2563eb;
+        }
+        
+        .header-info h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .header-info .subtitle {
+            font-size: 1.2em;
+            color: #6b7280;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+            color: #4b5563;
+        }
+        
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+            color: #2563eb;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e5e7eb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .about-text {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #4b5563;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-left: 4px solid #2563eb;
+            background: #f8fafc;
+        }
+        
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-size: 1em;
+            color: #6b7280;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .period {
+            font-size: 0.9em;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .job-description {
+            font-size: 0.95em;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        
+        .job-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .job-description li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .job-description li::before {
+            content: "▸";
+            color: #2563eb;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #2563eb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s;
+        }
+        
+        .print-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">
+        🖨️ Imprimir CV
+    </button>
+    
+    <div class="container">
+        <header class="header">
+            <img src="img/leo.jpeg" alt="Leonardo Maldonado" class="profile-image">
+            <div class="header-info">
+                <h1>Leonardo Maldonado</h1>
+                <p class="subtitle">Desarrollador PHP Laravel | Integración de Sistemas y Automatización</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i>📧</i>
+                        <span>lrmaldo@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>💼</i>
+                        <span>linkedin.com/in/lrmaldo</span>
+                    </div>
+                    <div class="contact-item">
+                        <i>🐙</i>
+                        <span>github.com/lrmaldo</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Perfil Profesional</h2>
+            <p class="about-text">
+                Ingeniero en Sistemas Computacionales con más de 5 años de experiencia desarrollando soluciones web en PHP y Laravel. Experto en integración de APIs, automatización de procesos con servidores Linux, y sincronización con equipos de red como Mikrotik y OLTs. Apasionado por construir plataformas estables, escalables y orientadas al usuario.
+            </p>
+            <p class="about-text">
+                Experiencia en desarrollo remoto, despliegue continuo y control de versiones con Git. Especializado en el desarrollo de sistemas ERP para ISPs y automatización de procesos empresariales.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experiencia Profesional</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Administrador de Sistemas y Desarrollador de Software</h3>
+                <p class="company">Sattlink.com</p>
+                <p class="period">2020 - Presente</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Desarrollo de aplicaciones web y móviles como líder del área de tecnología</li>
+                        <li>Mantenimiento de infraestructura: servidores web, DNS y virtualización</li>
+                        <li>Desarrollo de sistema de cobros integrado con Mikrotik API para automatización de procesos</li>
+                        <li>Implementación de soluciones de sincronización con equipos OLT Huawei y VSOL</li>
+                        <li>Gestión de bases de datos MySQL y PostgreSQL en entornos de producción</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Docente de Tecnologías</h3>
+                <p class="company">Escuela Secundaria Francisco de Montejo</p>
+                <p class="period">Enero 2018 - Febrero 2020</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Lideré proyectos educativos enfocados en la integración de nuevas tecnologías</li>
+                        <li>Impartí clases de informática a tres niveles educativos diferentes</li>
+                        <li>Desarrollé un plan de estudios innovador para la enseñanza de programación</li>
+                        <li>Capacitación a estudiantes en uso de herramientas digitales y desarrollo web básico</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Sistema de Gestión de Grúas</h3>
+                <p class="company">Laravel + Livewire</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Desarrollo completo de plataforma con módulos de clientes, asistencia, inventario, caja chica y siniestros</li>
+                        <li>Sincronización en tiempo real con Mikrotik vía API</li>
+                        <li>Generación de reportes PDF y notificaciones por Telegram</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Sistema de Paquetes WISP</h3>
+                <p class="company">Laravel + React Native</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Backend en Laravel con panel de administración para paquetes móviles y MiFi</li>
+                        <li>Integración con app móvil para consulta de saldo, consumo y recargas</li>
+                        <li>Control de stock y facturación mensual automatizada</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Lenguajes y Frameworks</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Livewire</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React Native</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Bases de Datos</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>DevOps y Servidores</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Ubuntu</span>
+                        <span class="skill-tag">Nginx</span>
+                        <span class="skill-tag">Supervisor</span>
+                        <span class="skill-tag">SSH</span>
+                        <span class="skill-tag">Queue Workers</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Redes y Automatización</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Mikrotik API</span>
+                        <span class="skill-tag">OLT Huawei/VSOL</span>
+                        <span class="skill-tag">Hotspot</span>
+                        <span class="skill-tag">VLANs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Telegram API</span>
+                        <span class="skill-tag">TailwindCSS</span>
+                        <span class="skill-tag">SweetAlert</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Función para imprimir
+        function printCV() {
+            window.print();
+        }
+        
+        // Auto-ajustar el tamaño de la imagen si no carga
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileImg = document.querySelector('.profile-image');
+            profileImg.onerror = function() {
+                this.style.display = 'none';
+                document.querySelector('.header').style.paddingLeft = '0';
+            };
+        });
+    </script>
+</body>
+</html>
