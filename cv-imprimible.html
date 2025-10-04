@@ -118,10 +118,11 @@
         }
         
         .experience-item {
-            margin-bottom: 25px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
             border-left: 4px solid #2563eb;
             background: #f8fafc;
+            page-break-inside: avoid;
         }
         
         .job-title {
@@ -172,14 +173,14 @@
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
             margin-bottom: 20px;
         }
         
         .skill-category {
             background: #f8fafc;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             border-left: 4px solid #2563eb;
         }
@@ -246,7 +247,7 @@
             <img src="img/leo.jpeg" alt="Leonardo Maldonado" class="profile-image">
             <div class="header-info">
                 <h1>Leonardo Maldonado</h1>
-                <p class="subtitle">Desarrollador PHP Laravel | Integración de Sistemas y Automatización</p>
+                <p class="subtitle">Desarrollador PHP Laravel | Especialista en IA y Automatización | Integración de Sistemas</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i>📧</i>
@@ -267,10 +268,10 @@
         <section class="section">
             <h2 class="section-title">Perfil Profesional</h2>
             <p class="about-text">
-                Ingeniero en Sistemas Computacionales con más de 5 años de experiencia desarrollando soluciones web en PHP y Laravel. Experto en integración de APIs, automatización de procesos con servidores Linux, y sincronización con equipos de red como Mikrotik y OLTs. Apasionado por construir plataformas estables, escalables y orientadas al usuario.
+                Ingeniero en Sistemas Computacionales con más de 5 años de experiencia desarrollando soluciones web en PHP y Laravel. Especialista en integración de APIs, automatización de procesos con servidores Linux, IA aplicada a negocios, y sincronización con equipos de red como Mikrotik y OLTs. Experto en desarrollo de sistemas ERP para telecomunicaciones y automatización inteligente de procesos empresariales.
             </p>
             <p class="about-text">
-                Experiencia en desarrollo remoto, despliegue continuo y control de versiones con Git. Especializado en el desarrollo de sistemas ERP para ISPs y automatización de procesos empresariales.
+                Experiencia avanzada en Laravel (Jobs, Queues, Livewire), desarrollo de aplicaciones móviles con React Native, implementación de bots inteligentes con Telegram API, y administración de infraestructura de red con OLT Huawei/VSOL. Pionero en la aplicación de IA para optimización de procesos y desarrollo de asistentes inteligentes para soporte técnico.
             </p>
         </section>
 
@@ -312,24 +313,89 @@
             
             <div class="experience-item">
                 <h3 class="job-title">Sistema de Gestión de Grúas</h3>
-                <p class="company">Laravel + Livewire</p>
+                <p class="company">Laravel + Livewire + Telegram Bot API</p>
+                <p class="period">2024 - 2025</p>
                 <div class="job-description">
                     <ul>
-                        <li>Desarrollo completo de plataforma con módulos de clientes, asistencia, inventario, caja chica y siniestros</li>
-                        <li>Sincronización en tiempo real con Mikrotik vía API</li>
-                        <li>Generación de reportes PDF y notificaciones por Telegram</li>
+                        <li>Desarrollo completo de plataforma ERP con módulos de Roles, Clientes, Siniestros, Inventario y Caja Chica</li>
+                        <li>Automatización con notificaciones en tiempo real vía Telegram Bot API</li>
+                        <li>Generación automática de reportes PDF e inventarios semanales</li>
+                        <li>Sistema de roles y permisos avanzado con Laravel</li>
                     </ul>
                 </div>
             </div>
 
             <div class="experience-item">
-                <h3 class="job-title">Sistema de Paquetes WISP</h3>
-                <p class="company">Laravel + React Native</p>
+                <h3 class="job-title">Plataforma de Telecomunicaciones WISP</h3>
+                <p class="company">Laravel + React Native + Mikrotik API</p>
+                <p class="period">2024 - 2025</p>
                 <div class="job-description">
                     <ul>
-                        <li>Backend en Laravel con panel de administración para paquetes móviles y MiFi</li>
-                        <li>Integración con app móvil para consulta de saldo, consumo y recargas</li>
+                        <li>Gestión completa de paquetes móviles y WISP con backend Laravel</li>
+                        <li>Sincronización automática con Mikrotik API para cortes/reconexión de clientes</li>
+                        <li>App React Native para consulta de saldo, recargas y gestión de paquetes</li>
+                        <li>Integración de pagos en línea con OpenPay para recargas automáticas</li>
                         <li>Control de stock y facturación mensual automatizada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Automatización de Reportes Bestel → Google Sheets</h3>
+                <p class="company">Google Apps Script + IA</p>
+                <p class="period">2024</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Script inteligente para procesar correos de mantenimiento de proveedores</li>
+                        <li>Extracción automática de datos clave y registro en Google Sheets</li>
+                        <li>Reducción del 90% del tiempo de registro manual de mantenimientos</li>
+                        <li>Integración con modelos de IA para análisis de contenido de correos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Infraestructura de Red y Servicios</h3>
+                <p class="company">OLT Huawei MA5800 + VSOL + Ubuntu Server</p>
+                <p class="period">2023 - 2025</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Configuración y gestión de OLT Huawei MA5800 y VSOL para redes GPON</li>
+                        <li>Administración de Speedtest Server para Ookla con métricas personalizadas</li>
+                        <li>Implementación de Unbound DNS para optimización de consultas</li>
+                        <li>Gestión avanzada de VLANs, DHCP y sistemas Hotspot</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experiencia en IA y Automatización</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Integración de IA en Procesos de Negocio</h3>
+                <p class="company">Ollama + ChatGPT + Copilot</p>
+                <p class="period">2024 - 2025</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Implementación de modelos de lenguaje para asistir en desarrollo Laravel y React Native</li>
+                        <li>Desarrollo de bots inteligentes con Telegram Bot API integrados con sistemas internos</li>
+                        <li>Automatización de consultas de inventario y generación de reportes con IA</li>
+                        <li>Asistentes inteligentes para soporte técnico en telecomunicaciones</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="job-title">Talleres Educativos de IA</h3>
+                <p class="company">Google Colab + Python</p>
+                <p class="period">2024</p>
+                <div class="job-description">
+                    <ul>
+                        <li>Diseño de talleres prácticos para estudiantes de ingeniería en sistemas</li>
+                        <li>Creación de modelos de IA didácticos con Google Colab y Python</li>
+                        <li>Capacitación en aplicación práctica de IA en proyectos reales</li>
+                        <li>Desarrollo de casos de uso específicos para telecomunicaciones</li>
                     </ul>
                 </div>
             </div>
@@ -343,10 +409,23 @@
                     <h3>Lenguajes y Frameworks</h3>
                     <div class="skill-list">
                         <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Laravel Avanzado</span>
                         <span class="skill-tag">Livewire</span>
+                        <span class="skill-tag">Alpine.js</span>
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Laravel Especializado</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Jobs & Queues</span>
+                        <span class="skill-tag">Supervisor</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Livewire Components</span>
+                        <span class="skill-tag">Queue Workers</span>
                     </div>
                 </div>
 
@@ -361,21 +440,45 @@
                 <div class="skill-category">
                     <h3>DevOps y Servidores</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Ubuntu</span>
+                        <span class="skill-tag">Ubuntu Server</span>
                         <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">Supervisor</span>
                         <span class="skill-tag">SSH</span>
-                        <span class="skill-tag">Queue Workers</span>
+                        <span class="skill-tag">Unbound DNS</span>
+                        <span class="skill-tag">Speedtest Server</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Redes y Automatización</h3>
+                    <h3>Redes y Telecomunicaciones</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Mikrotik API</span>
-                        <span class="skill-tag">OLT Huawei/VSOL</span>
-                        <span class="skill-tag">Hotspot</span>
+                        <span class="skill-tag">OLT Huawei MA5800</span>
+                        <span class="skill-tag">OLT VSOL</span>
+                        <span class="skill-tag">GPON Networks</span>
                         <span class="skill-tag">VLANs</span>
+                        <span class="skill-tag">Hotspot</span>
+                        <span class="skill-tag">DHCP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Automatización e IA</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Telegram Bot API</span>
+                        <span class="skill-tag">Google Apps Script</span>
+                        <span class="skill-tag">Ollama</span>
+                        <span class="skill-tag">IA para Negocios</span>
+                        <span class="skill-tag">Chatbots</span>
+                        <span class="skill-tag">Google Colab</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Pagos e Integración</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">OpenPay</span>
+                        <span class="skill-tag">Apps Móviles</span>
+                        <span class="skill-tag">API REST</span>
                     </div>
                 </div>
 
@@ -383,7 +486,6 @@
                     <h3>Herramientas</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Telegram API</span>
                         <span class="skill-tag">TailwindCSS</span>
                         <span class="skill-tag">SweetAlert</span>
                     </div>
