@@ -28,10 +28,16 @@
             .container {
                 max-width: none;
                 margin: 0;
-                padding: 20mm;
+                padding: 15mm 20mm;
             }
             .no-print {
                 display: none;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            .experience-item {
+                page-break-inside: avoid;
             }
         }
         
@@ -40,37 +46,25 @@
             margin: 0 auto;
             padding: 20px;
             background: white;
-            min-height: 297mm;
         }
         
         .header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 3px solid #2563eb;
         }
         
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 30px;
-            border: 4px solid #2563eb;
-        }
-        
-        .header-info h1 {
-            font-size: 2.5em;
+        .header h1 {
+            font-size: 2.2em;
             font-weight: 700;
             color: #1e40af;
             margin-bottom: 5px;
         }
         
-        .header-info .subtitle {
-            font-size: 1.2em;
+        .header .subtitle {
+            font-size: 1em;
             color: #6b7280;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 400;
         }
         
@@ -95,14 +89,15 @@
         }
         
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 25px;
+            page-break-inside: avoid;
         }
         
         .section-title {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: 600;
             color: #1e40af;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             padding-bottom: 5px;
             border-bottom: 2px solid #e5e7eb;
             text-transform: uppercase;
@@ -110,46 +105,46 @@
         }
         
         .about-text {
-            font-size: 1em;
-            line-height: 1.7;
+            font-size: 0.9em;
+            line-height: 1.5;
             color: #4b5563;
             text-align: justify;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .experience-item {
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
             border-left: 4px solid #2563eb;
             background: #f8fafc;
             page-break-inside: avoid;
         }
         
         .job-title {
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: 600;
             color: #1e40af;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         
         .company {
-            font-size: 1em;
+            font-size: 0.85em;
             color: #6b7280;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             font-weight: 500;
         }
         
         .period {
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: #9ca3af;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-style: italic;
         }
         
         .job-description {
-            font-size: 0.95em;
+            font-size: 0.85em;
             color: #4b5563;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
         .job-description ul {
@@ -158,7 +153,7 @@
         }
         
         .job-description li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             padding-left: 15px;
             position: relative;
         }
@@ -171,43 +166,31 @@
             font-weight: bold;
         }
         
-        .skills-grid {
+        .skills-compact {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
         }
         
-        .skill-category {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
+        .skill-row {
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+            font-size: 0.85em;
+            padding: 6px 0;
         }
         
-        .skill-category h3 {
-            font-size: 1.1em;
+        .skill-label {
             font-weight: 600;
             color: #1e40af;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 0.5px;
+            min-width: 140px;
+            flex-shrink: 0;
         }
         
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        
-        .skill-tag {
-            background: #2563eb;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 500;
+        .skill-items {
+            color: #4b5563;
+            line-height: 1.4;
         }
         
         .print-btn {
@@ -244,23 +227,20 @@
     
     <div class="container">
         <header class="header">
-            <img src="img/leo.jpeg" alt="Leonardo Maldonado" class="profile-image">
-            <div class="header-info">
-                <h1>Leonardo Maldonado</h1>
-                <p class="subtitle">Desarrollador PHP Laravel | Especialista en IA y Automatización | Integración de Sistemas</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i>📧</i>
-                        <span>lrmaldo@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>💼</i>
-                        <span>linkedin.com/in/lrmaldo</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>🐙</i>
-                        <span>github.com/lrmaldo</span>
-                    </div>
+            <h1>Leonardo Maldonado</h1>
+            <p class="subtitle">Desarrollador PHP Laravel | Especialista en IA y Automatización | Integración de Sistemas</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>lrmaldo@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>💼</i>
+                    <span>linkedin.com/in/lrmaldo</span>
+                </div>
+                <div class="contact-item">
+                    <i>🐙</i>
+                    <span>github.com/lrmaldo</span>
                 </div>
             </div>
         </header>
@@ -273,6 +253,48 @@
             <p class="about-text">
                 Experiencia avanzada en Laravel (Jobs, Queues, Livewire), desarrollo de aplicaciones móviles con React Native, implementación de bots inteligentes con Telegram API, y administración de infraestructura de red con OLT Huawei/VSOL. Pionero en la aplicación de IA para optimización de procesos y desarrollo de asistentes inteligentes para soporte técnico.
             </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-compact">
+                <div class="skill-row">
+                    <span class="skill-label">Backend:</span>
+                    <span class="skill-items">PHP, Laravel (Jobs, Queues, Livewire, API), Python</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Frontend:</span>
+                    <span class="skill-items">JavaScript, Alpine.js, React Native, TailwindCSS</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Bases de Datos:</span>
+                    <span class="skill-items">MySQL, PostgreSQL</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">DevOps:</span>
+                    <span class="skill-items">Ubuntu Server, Nginx, SSH, Supervisor, Queue Workers</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Redes:</span>
+                    <span class="skill-items">Mikrotik API, OLT Huawei MA5800, VSOL, GPON, VLANs, DHCP, Hotspot</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">DNS & Testing:</span>
+                    <span class="skill-items">Unbound DNS, Speedtest Server (Ookla)</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">IA & Automatización:</span>
+                    <span class="skill-items">Ollama, ChatGPT, Copilot, Google Colab, Telegram Bot API</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Integración:</span>
+                    <span class="skill-items">Google Apps Script, OpenPay, API REST</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Herramientas:</span>
+                    <span class="skill-items">Git, SweetAlert</span>
+                </div>
+            </div>
         </section>
 
         <section class="section">
@@ -386,7 +408,7 @@
                 </div>
             </div>
 
-            <div class="experience-item">
+           <!--  <div class="experience-item">
                 <h3 class="job-title">Talleres Educativos de IA</h3>
                 <p class="company">Google Colab + Python</p>
                 <p class="period">2024</p>
@@ -398,99 +420,7 @@
                         <li>Desarrollo de casos de uso específicos para telecomunicaciones</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Habilidades Técnicas</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Lenguajes y Frameworks</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel Avanzado</span>
-                        <span class="skill-tag">Livewire</span>
-                        <span class="skill-tag">Alpine.js</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Python</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Laravel Especializado</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Jobs & Queues</span>
-                        <span class="skill-tag">Supervisor</span>
-                        <span class="skill-tag">API Integration</span>
-                        <span class="skill-tag">Livewire Components</span>
-                        <span class="skill-tag">Queue Workers</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Bases de Datos</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>DevOps y Servidores</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Ubuntu Server</span>
-                        <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">SSH</span>
-                        <span class="skill-tag">Unbound DNS</span>
-                        <span class="skill-tag">Speedtest Server</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Redes y Telecomunicaciones</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Mikrotik API</span>
-                        <span class="skill-tag">OLT Huawei MA5800</span>
-                        <span class="skill-tag">OLT VSOL</span>
-                        <span class="skill-tag">GPON Networks</span>
-                        <span class="skill-tag">VLANs</span>
-                        <span class="skill-tag">Hotspot</span>
-                        <span class="skill-tag">DHCP</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Automatización e IA</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Telegram Bot API</span>
-                        <span class="skill-tag">Google Apps Script</span>
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">IA para Negocios</span>
-                        <span class="skill-tag">Chatbots</span>
-                        <span class="skill-tag">Google Colab</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Pagos e Integración</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">OpenPay</span>
-                        <span class="skill-tag">Apps Móviles</span>
-                        <span class="skill-tag">API REST</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Herramientas</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">TailwindCSS</span>
-                        <span class="skill-tag">SweetAlert</span>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </section>
     </div>
 
@@ -499,15 +429,6 @@
         function printCV() {
             window.print();
         }
-        
-        // Auto-ajustar el tamaño de la imagen si no carga
-        document.addEventListener('DOMContentLoaded', function() {
-            const profileImg = document.querySelector('.profile-image');
-            profileImg.onerror = function() {
-                this.style.display = 'none';
-                document.querySelector('.header').style.paddingLeft = '0';
-            };
-        });
     </script>
 </body>
 </html>
