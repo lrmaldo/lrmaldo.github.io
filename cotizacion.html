@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - Sistema de Registro de Ganado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            border-bottom: 3px solid #2c5f2d;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .logo-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .company-info h1 {
+            color: #2c5f2d;
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
+        
+        .company-info p {
+            color: #666;
+            font-size: 13px;
+            margin: 2px 0;
+        }
+        
+        .quote-title {
+            text-align: right;
+            font-size: 20px;
+            color: #2c5f2d;
+            font-weight: bold;
+        }
+        
+        .quote-number {
+            text-align: right;
+            color: #999;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .client-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 10px;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            page-break-inside: avoid;
+        }
+        
+        .client-info div {
+            font-size: 12px;
+        }
+        
+        .client-info label {
+            font-weight: bold;
+            color: #2c5f2d;
+            display: block;
+            margin-bottom: 2px;
+            font-size: 12px;
+        }
+        
+        .client-info p {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0 12px 0;
+            page-break-inside: avoid;
+        }
+        
+        th {
+            background-color: #2c5f2d;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #2c5f2d;
+            font-size: 11px;
+        }
+        
+        td {
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            color: #333;
+            font-size: 11px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .description {
+            font-size: 10px;
+            line-height: 1.2;
+        }
+        
+        .quantity {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .unit-price {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .total {
+            text-align: right;
+            font-weight: bold;
+            color: #2c5f2d;
+        }
+        
+        .summary {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5px;
+            page-break-inside: avoid;
+        }
+        
+        .summary-box {
+            width: 350px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 12px;
+        }
+        
+        .summary-row.total-row {
+            background-color: #2c5f2d;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border: 2px solid #2c5f2d;
+            padding: 10px;
+        }
+        
+        .terms {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f5f1;
+            border-left: 4px solid #2c5f2d;
+            font-size: 12px;
+            color: #555;
+            page-break-inside: avoid;
+        }
+        
+        .terms h3 {
+            color: #2c5f2d;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        
+        .terms ul {
+            margin-left: 20px;
+            line-height: 1.5;
+        }
+        
+        .terms li {
+            margin-bottom: 5px;
+            font-size: 11px;
+        }
+        
+        .footer {
+            margin-top: 15px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            color: #999;
+            font-size: 10px;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            page-break-inside: avoid;
+        }
+        
+        .signature {
+            text-align: center;
+            width: 40%;
+        }
+        
+        .signature-line {
+            border-top: 1px solid #333;
+            margin-top: 30px;
+            margin-bottom: 3px;
+            height: 1px;
+        }
+        
+        .signature-name {
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .validity {
+            text-align: center;
+            margin-top: 12px;
+            padding: 10px;
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #856404;
+            page-break-inside: avoid;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        
+        .print-btn:hover {
+            background-color: #1f4620;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                padding: 10mm 12mm;
+            }
+            .print-btn {
+                display: none;
+            }
+            table {
+                page-break-inside: avoid;
+                margin: 5px 0 8px 0;
+            }
+            .summary {
+                page-break-inside: avoid;
+            }
+            .client-info {
+                page-break-inside: avoid;
+            }
+            h3 {
+                margin: 5px 0 8px 0;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo-section">
+                <div class="company-info">
+                    <h1>🐄 SOLUCIONES GANADERAS</h1>
+                    <p>Desarrollo de Software Especializado</p>
+                </div>
+                <div>
+                    <div class="quote-title">COTIZACIÓN</div>
+                    <div class="quote-number">Fecha: 09 de Diciembre, 2025</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="client-info">
+            <div>
+                <label>CLIENTE:</label>
+                <p>Faustino Florentino</p>
+                <label>UBICACIÓN:</label>
+                <p>Veracruz, México</p>
+            </div>
+            <div>
+                <label>PROYECTO:</label>
+                <p>Sistema de Registro de Ganado</p>
+                <label>VALIDEZ:</label>
+                <p>30 días a partir de esta fecha</p>
+            </div>
+        </div>
+        
+        <h3 style="color: #2c5f2d; margin-bottom: 15px; font-size: 16px;">DESGLOSE DE SERVICIOS</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Descripción del Servicio</th>
+                    <th style="width: 15%;">Horas</th>
+                    <th style="width: 15%;">Tarifa/Hora</th>
+                    <th style="width: 20%;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="description"><strong>1. Análisis y Diseño</strong><br>Análisis de requerimientos, diseño de base de datos, arquitectura del sistema</td>
+                    <td class="quantity">8</td>
+                    <td class="unit-price">$150</td>
+                    <td class="total">$1,200</td>
+                </tr>
+                <tr>
+                    <td class="description"><strong>2. Desarrollo Backend</strong><br>Sistema de autenticación, módulo de animales, datos clínicos, gestión de imágenes</td>
+                    <td class="quantity">50</td>
+                    <td class="unit-price">$150</td>
+                    <td class="total">$7,500</td>
+                </tr>
+                <tr>
+                    <td class="description"><strong>3. Desarrollo Frontend</strong><br>Interfaz de usuario responsiva, formularios, validaciones, diseño intuitivo</td>
+                    <td class="quantity">25</td>
+                    <td class="unit-price">$150</td>
+                    <td class="total">$3,750</td>
+                </tr>
+                <tr>
+                    <td class="description"><strong>4. Sistema de Reportes</strong><br>Generación de documentos descargables, reportes con datos y fotografías en PDF</td>
+                    <td class="quantity">18</td>
+                    <td class="unit-price">$150</td>
+                    <td class="total">$2,700</td>
+                </tr>
+                <tr>
+                    <td class="description"><strong>5. Testing y QA</strong><br>Pruebas funcionales, corrección de errores, validación general del sistema</td>
+                    <td class="quantity">12</td>
+                    <td class="unit-price">$150</td>
+                    <td class="total">$1,800</td>
+                </tr>
+                <tr style="background-color: #f0f5f1; font-weight: bold;">
+                    <td colspan="3" style="text-align: right;">TOTAL DE HORAS: 113</td>
+                    <td class="total">$16,950</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="summary">
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>$16,950</span>
+                </div>
+                <div class="summary-row">
+                    <span>IVA (16%):</span>
+                    <span>$2,712</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>TOTAL:</span>
+                    <span>$19,662</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="terms">
+            <h3>📋 TÉRMINOS Y CONDICIONES</h3>
+            <ul>
+                <li><strong>Alcance:</strong> Desarrollo del sistema de acuerdo a especificaciones proporcionadas. No incluye hosting ni infraestructura de servidores.</li>
+                <li><strong>Metodología:</strong> Entregas parciales cada 15 días para revisión y feedback.</li>
+                <li><strong>Revisiones:</strong> Se incluyen 2 rondas de revisiones y ajustes. Cambios adicionales se cotizarán por separado.</li>
+                <li><strong>Plazo de Entrega:</strong> Aproximadamente 4-5 semanas desde la firma del contrato.</li>
+                <li><strong>Pago:</strong> 50% al inicio del proyecto, 50% a la entrega final.</li>
+                <li><strong>Soporte:</strong> Se ofrece soporte técnico por 30 días posteriores a la entrega (sin costo adicional).</li>
+                <li><strong>Tecnología:</strong> Laravel 12, PHP 8.2+, MySQL, Livewire, Tailwindcss.</li>
+                   <!-- si no requiere factura fiscal el costo seria el subtotal -->
+                   <li><strong>Factura:</strong> Si el cliente NO requiere factura fiscal, el importe a pagar será el <strong>subtotal (sin IVA)</strong>. Si solicita factura fiscal, se aplicará el IVA correspondiente y la cotización se ajustará para incluirlo — por favor solicitar factura al aceptar la cotización.</li>
+            </ul>
+        </div>
+        
+        <div class="validity">
+            <strong>⏰ Esta cotización es válida por 30 días a partir de la fecha indicada.</strong><br>
+            
+        </div>
+        
+        <div class="signature-section">
+            <div class="signature">
+                <p style="margin-bottom: 50px; font-size: 13px;"><strong>Preparado por:</strong></p>
+                <div class="signature-line"></div>
+                <div class="signature-name">Ing. Leonardo Maldonado</div>
+            </div>
+            <div class="signature">
+                <p style="margin-bottom: 50px; font-size: 13px;"><strong>Aceptado por:</strong></p>
+                <div class="signature-line"></div>
+                <div class="signature-name">Faustino Florentino</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Cotización preparada: 09 de Diciembre, 2025 | Sistema de Registro de Ganado v1.0</p>
+        </div>
+    </div>
+</body>
+</html>

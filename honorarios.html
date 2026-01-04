@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Honorarios - Fausto Florentino</title>
+  <style>
+    :root{--accent:#1f6f3b;--muted:#666;--bg:#fff}
+    *{box-sizing:border-box}
+    body{font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;background:#f4f6f8;padding:18px}
+    .sheet{max-width:900px;margin:0 auto;background:var(--bg);padding:20px 24px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:12px}
+    h1{color:var(--accent);font-size:20px;margin:0}
+    .meta{color:var(--muted);font-size:13px}
+    .client{display:flex;gap:20px;margin:10px 0 8px 0}
+    .client div{font-size:13px}
+    .items{width:100%;border-collapse:collapse;margin-top:8px}
+    .items th,.items td{border:1px solid #e3e6e8;padding:8px;font-size:12px}
+    .items th{background:var(--accent);color:#fff;text-align:left;font-size:12px}
+    .items td.description{font-size:11px;color:#333}
+    .right{text-align:right}
+    .center{text-align:center}
+    .totals{display:flex;justify-content:flex-end;margin-top:10px}
+    .totals .box{width:340px;border:1px solid #e3e6e8}
+    .totals .row{display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid #eee;font-size:13px}
+    .totals .row.total{background:var(--accent);color:#fff;font-weight:700}
+    .notes{margin-top:12px;padding:10px;background:#fff7e6;border-left:4px solid #ffbf00;font-size:12px}
+    .sign{display:flex;justify-content:space-between;margin-top:18px;gap:20px}
+    .signature{width:45%;text-align:center;font-size:12px}
+    .signature .line{border-top:1px solid #333;margin-top:36px}
+    .printBtn{position:fixed;right:18px;top:18px;background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    @media print{body{background:#fff;padding:0} .printBtn{display:none} .sheet{box-shadow:none;margin:0;border-radius:0;padding:12mm}}
+  </style>
+</head>
+<body>
+  <button class="printBtn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+  <div class="sheet">
+    <header>
+      <div>
+        <h1>SOPORTE TECNICO</h1>
+        <div class="meta">Proveedor de Servicios - honorarios profesionales</div>
+      </div>
+      <div class="meta">
+        <div><strong>Para:</strong> Fausto Florentino</div>
+        <div><strong>Fecha emisión:</strong> 09/12/2025</div>
+      </div>
+    </header>
+
+    <section class="client">
+      <div>
+        <div style="font-weight:700">CLIENTE</div>
+        <div>Fausto Florentino</div>
+        <div>Veracruz, México</div>
+      </div>
+      <div>
+        <div style="font-weight:700">PROYECTO / MOTIVO</div>
+        <div>Soporte técnico</div>
+      </div>
+    </section>
+
+    <h3 style="color:var(--accent);margin:8px 0 4px 0;font-size:14px">DETALLE DE HONORARIOS</h3>
+
+    <table class="items" role="table">
+      <thead>
+        <tr>
+          <th style="width:52%">Concepto</th>
+          <th style="width:15%" class="center">Fecha</th>
+          <th style="width:13%" class="center">Cantidad</th>
+          <th style="width:20%" class="right">Importe (MXN)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="description">28/10/2025 — Soporte: Levantamiento de ticket con proveedor de correos (sincronización DNS y verificación MailChannels). Mensajes intercambiados entre cliente y soporte (Raul Ortega). Referencia: error 550 5.1.2 Sender Domain Not Found (SDNF). Dominio: intevo.com.mx</td>
+          <td class="center">28/10/2025</td>
+          <td class="center">1</td>
+          <td class="right">$400.00</td>
+        </tr>
+        <tr>
+          <td class="description">08/12/2025 10:00 — Soporte: Problema de acceso a correos reportado por Barbara Hernández (barbara.hernandez@intevo.com.mx). Mensaje recibido: "los correos de Intevo... desde ahorita en la mañana no quiere agarrar la clave". Diagnóstico: intento de inicio de sesión rechazado; se verificó servicio de correo y credenciales, y se aplicaron acciones de diagnóstico remoto para restaurar acceso.</td>
+          <td class="center">08/12/2025</td>
+          <td class="center">1</td>
+          <td class="right">$300.00</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="right" style="font-weight:700;background:#f3f6f4">TOTAL</td>
+          <td class="right" style="font-weight:700;color:var(--accent)">$700.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <div class="box summary-box">
+      <!--   <div class="row"><span>Subtotal</span><span>$700.00</span></div>
+        <div class="row"><span>IVA (16%)</span><span>$112.00</span></div> -->
+        <div class="row total"><span>TOTAL A PAGAR</span><span>$700.00</span></div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <strong>Notas:</strong>
+      <ul style="margin:6px 0 0 18px">
+   <!--      <li>Favor de realizar el pago mediante transferencia o depósito a la cuenta indicada en la propuesta.</li>
+        <li>Tiempo de validez de la presente: 15 días.</li> -->
+        <li>Los importes están en pesos mexicanos (MXN).</li>
+        <!-- precio sin iva -->
+         <li>Este documento no es una factura fiscal; es un comprobante de honorarios por servicios profesionales prestados.</li>
+         <li>Precio sin IVA</li>
+      </ul>
+    </div>
+
+    <div class="sign">
+      <div class="signature">
+        <div class="line"></div>
+        <div class="signature-name">Ing. Leonardo Maldonado</div>
+      </div>
+      <div class="signature">
+        <div class="line"></div>
+        <div class="signature-name">Fausto Florentino (acepta)</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px;font-size:11px;color:#777;text-align:center">Emitido: 09/12/2025 — Documento de honorarios de soporte técnico</div>
+  </div>
+
+</body>
+</html>
