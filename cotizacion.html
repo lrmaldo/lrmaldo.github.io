@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotización - Sistema de Registro de Ganado</title>
+    <title>Cotización</title>
     <style>
         * {
             margin: 0;
@@ -263,6 +263,131 @@
         .print-btn:hover {
             background-color: #1f4620;
         }
+
+        .editor-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-end;
+            margin-bottom: 8px;
+        }
+
+        .editor-toolbar .mini {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            background-color: #fff;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .chip input[type="checkbox"] {
+            transform: translateY(1px);
+        }
+
+        .btn-small {
+            padding: 8px 12px;
+            background-color: #2c5f2d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn-small.secondary {
+            background-color: #666;
+        }
+
+        .btn-small.danger {
+            background-color: #8b2a2a;
+        }
+
+        .btn-small:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .add-service {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr 0.7fr 0.7fr auto;
+            gap: 8px;
+            align-items: end;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin: 10px 0;
+            page-break-inside: avoid;
+        }
+
+        .field label {
+            font-weight: bold;
+            color: #2c5f2d;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .field input,
+        .field textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            font-family: inherit;
+        }
+
+        .field textarea {
+            resize: vertical;
+            min-height: 36px;
+            max-height: 90px;
+        }
+
+        .table-input {
+            width: 100%;
+            border: 1px solid transparent;
+            background: transparent;
+            font: inherit;
+            color: inherit;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .table-input:focus {
+            outline: none;
+            border-color: #2c5f2d;
+            background: #fff;
+        }
+
+        .desc-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .delete-link {
+            background: transparent;
+            border: none;
+            color: #8b2a2a;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .muted {
+            color: #999;
+        }
         
         @media print {
             body {
@@ -278,6 +403,16 @@
             }
             .print-btn {
                 display: none;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .table-input {
+                border-color: transparent !important;
+                padding: 0 !important;
+            }
+            .add-service {
+                display: none !important;
             }
             table {
                 page-break-inside: avoid;
@@ -308,9 +443,18 @@
                 </div>
                 <div>
                     <div class="quote-title">COTIZACIÓN</div>
-                    <div class="quote-number">Fecha: 09 de Diciembre, 2025</div>
+                    <div class="quote-number">Fecha: <span id="quoteDateText">09 de Diciembre, 2025</span></div>
                 </div>
             </div>
+        </div>
+
+        <div class="editor-toolbar no-print">
+            <div class="chip">
+                <input id="applyIva" type="checkbox" />
+                <label for="applyIva">Requiere factura fiscal (aplicar IVA 16%)</label>
+            </div>
+            <button id="resetBtn" class="btn-small secondary" type="button">Restablecer</button>
+            <span id="saveStatus" class="mini muted">Listo</span>
         </div>
         
         <div class="client-info">
@@ -329,6 +473,26 @@
         </div>
         
         <h3 style="color: #2c5f2d; margin-bottom: 15px; font-size: 16px;">DESGLOSE DE SERVICIOS</h3>
+
+        <form id="addServiceForm" class="add-service no-print" autocomplete="off">
+            <div class="field">
+                <label for="newTitle">Servicio</label>
+                <input id="newTitle" type="text" placeholder="Ej. Desarrollo Backend" required />
+            </div>
+            <div class="field">
+                <label for="newDesc">Descripción</label>
+                <textarea id="newDesc" placeholder="Detalles del servicio" required></textarea>
+            </div>
+            <div class="field">
+                <label for="newHours">Horas</label>
+                <input id="newHours" type="number" min="0" step="0.5" value="1" required />
+            </div>
+            <div class="field">
+                <label for="newRate">Tarifa/Hora</label>
+                <input id="newRate" type="number" min="0" step="1" value="150" required />
+            </div>
+            <button class="btn-small" type="submit">Agregar</button>
+        </form>
         
         <table>
             <thead>
@@ -339,40 +503,11 @@
                     <th style="width: 20%;">Total</th>
                 </tr>
             </thead>
+            <tbody id="servicesBody"></tbody>
             <tbody>
-                <tr>
-                    <td class="description"><strong>1. Análisis y Diseño</strong><br>Análisis de requerimientos, diseño de base de datos, arquitectura del sistema</td>
-                    <td class="quantity">8</td>
-                    <td class="unit-price">$150</td>
-                    <td class="total">$1,200</td>
-                </tr>
-                <tr>
-                    <td class="description"><strong>2. Desarrollo Backend</strong><br>Sistema de autenticación, módulo de animales, datos clínicos, gestión de imágenes</td>
-                    <td class="quantity">50</td>
-                    <td class="unit-price">$150</td>
-                    <td class="total">$7,500</td>
-                </tr>
-                <tr>
-                    <td class="description"><strong>3. Desarrollo Frontend</strong><br>Interfaz de usuario responsiva, formularios, validaciones, diseño intuitivo</td>
-                    <td class="quantity">25</td>
-                    <td class="unit-price">$150</td>
-                    <td class="total">$3,750</td>
-                </tr>
-                <tr>
-                    <td class="description"><strong>4. Sistema de Reportes</strong><br>Generación de documentos descargables, reportes con datos y fotografías en PDF</td>
-                    <td class="quantity">18</td>
-                    <td class="unit-price">$150</td>
-                    <td class="total">$2,700</td>
-                </tr>
-                <tr>
-                    <td class="description"><strong>5. Testing y QA</strong><br>Pruebas funcionales, corrección de errores, validación general del sistema</td>
-                    <td class="quantity">12</td>
-                    <td class="unit-price">$150</td>
-                    <td class="total">$1,800</td>
-                </tr>
                 <tr style="background-color: #f0f5f1; font-weight: bold;">
-                    <td colspan="3" style="text-align: right;">TOTAL DE HORAS: 113</td>
-                    <td class="total">$16,950</td>
+                    <td colspan="3" style="text-align: right;">TOTAL DE HORAS: <span id="totalHours">0</span></td>
+                    <td class="total"><span id="tableSubtotal">$0</span></td>
                 </tr>
             </tbody>
         </table>
@@ -381,15 +516,15 @@
             <div class="summary-box">
                 <div class="summary-row">
                     <span>Subtotal:</span>
-                    <span>$16,950</span>
+                    <span id="summarySubtotal">$0</span>
                 </div>
-                <div class="summary-row">
+                <div id="ivaRow" class="summary-row">
                     <span>IVA (16%):</span>
-                    <span>$2,712</span>
+                    <span id="summaryIva">$0</span>
                 </div>
                 <div class="summary-row total-row">
                     <span>TOTAL:</span>
-                    <span>$19,662</span>
+                    <span id="summaryTotal">$0</span>
                 </div>
             </div>
         </div>
@@ -431,5 +566,311 @@
             <p>Cotización preparada: 09 de Diciembre, 2025 | Sistema de Registro de Ganado v1.0</p>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const STORAGE_KEY = 'cotizador:cotizacion:v1';
+
+            const els = {
+                quoteDateText: document.getElementById('quoteDateText'),
+                servicesBody: document.getElementById('servicesBody'),
+                totalHours: document.getElementById('totalHours'),
+                tableSubtotal: document.getElementById('tableSubtotal'),
+                summarySubtotal: document.getElementById('summarySubtotal'),
+                ivaRow: document.getElementById('ivaRow'),
+                summaryIva: document.getElementById('summaryIva'),
+                summaryTotal: document.getElementById('summaryTotal'),
+                applyIva: document.getElementById('applyIva'),
+                resetBtn: document.getElementById('resetBtn'),
+                saveStatus: document.getElementById('saveStatus'),
+                addServiceForm: document.getElementById('addServiceForm'),
+                newTitle: document.getElementById('newTitle'),
+                newDesc: document.getElementById('newDesc'),
+                newHours: document.getElementById('newHours'),
+                newRate: document.getElementById('newRate'),
+            };
+
+            function pad2(n) {
+                return String(n).padStart(2, '0');
+            }
+
+            function formatSpanishDate(isoDate) {
+                // isoDate: YYYY-MM-DD
+                const [y, m, d] = isoDate.split('-').map(Number);
+                const dt = new Date(y, (m || 1) - 1, d || 1);
+                const txt = dt.toLocaleDateString('es-MX', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric',
+                });
+                // capitaliza el mes cuando aplique
+                return txt.replace(/\b([a-záéíóúñ])/i, (c) => c.toUpperCase());
+            }
+
+            function todayIso() {
+                const d = new Date();
+                return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+            }
+
+            function toNumber(value) {
+                const n = Number(value);
+                return Number.isFinite(n) ? n : 0;
+            }
+
+            function money(amount) {
+                const n = toNumber(amount);
+                const rounded = Math.round(n);
+                return '$' + rounded.toLocaleString('es-MX');
+            }
+
+            function uid() {
+                return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+            }
+
+            function defaultState() {
+                return {
+                    meta: {
+                        quoteDateIso: '2025-12-09',
+                        ivaRate: 0.16,
+                        applyIva: true,
+                    },
+                    items: [
+                        {
+                            id: uid(),
+                            title: 'Análisis y Diseño',
+                            description: 'Análisis de requerimientos, diseño de base de datos, arquitectura del sistema',
+                            hours: 8,
+                            rate: 150,
+                        },
+                        {
+                            id: uid(),
+                            title: 'Desarrollo Backend',
+                            description: 'Sistema de autenticación, módulo de animales, datos clínicos, gestión de imágenes',
+                            hours: 50,
+                            rate: 150,
+                        },
+                        {
+                            id: uid(),
+                            title: 'Desarrollo Frontend',
+                            description: 'Interfaz de usuario responsiva, formularios, validaciones, diseño intuitivo',
+                            hours: 25,
+                            rate: 150,
+                        },
+                        {
+                            id: uid(),
+                            title: 'Sistema de Reportes',
+                            description: 'Generación de documentos descargables, reportes con datos y fotografías en PDF',
+                            hours: 18,
+                            rate: 150,
+                        },
+                        {
+                            id: uid(),
+                            title: 'Testing y QA',
+                            description: 'Pruebas funcionales, corrección de errores, validación general del sistema',
+                            hours: 12,
+                            rate: 150,
+                        },
+                    ],
+                };
+            }
+
+            function loadState() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (!raw) return defaultState();
+                    const parsed = JSON.parse(raw);
+                    if (!parsed || !Array.isArray(parsed.items) || !parsed.meta) return defaultState();
+                    return parsed;
+                } catch (_) {
+                    return defaultState();
+                }
+            }
+
+            let saveTimer = null;
+            function setSaveStatus(text) {
+                if (!els.saveStatus) return;
+                els.saveStatus.textContent = text;
+            }
+
+            function scheduleSave() {
+                setSaveStatus('Guardando…');
+                if (saveTimer) window.clearTimeout(saveTimer);
+                saveTimer = window.setTimeout(() => {
+                    try {
+                        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+                        setSaveStatus('Guardado');
+                    } catch (e) {
+                        setSaveStatus('No se pudo guardar');
+                    }
+                }, 250);
+            }
+
+            function compute() {
+                const totalHours = state.items.reduce((acc, it) => acc + toNumber(it.hours), 0);
+                const subtotal = state.items.reduce((acc, it) => acc + (toNumber(it.hours) * toNumber(it.rate)), 0);
+                const iva = state.meta.applyIva ? subtotal * toNumber(state.meta.ivaRate) : 0;
+                const total = subtotal + iva;
+                return { totalHours, subtotal, iva, total };
+            }
+
+            function render() {
+                // fecha
+                els.quoteDateText.textContent = formatSpanishDate(state.meta.quoteDateIso || todayIso());
+
+                // toggle IVA
+                els.applyIva.checked = !!state.meta.applyIva;
+
+                // filas
+                els.servicesBody.innerHTML = '';
+
+                state.items.forEach((item, index) => {
+                    const tr = document.createElement('tr');
+
+                    const lineTotal = toNumber(item.hours) * toNumber(item.rate);
+
+                    tr.innerHTML = `
+                        <td class="description">
+                            <div class="desc-title-row">
+                                <strong>${index + 1}. <input class="table-input" data-id="${item.id}" data-field="title" type="text" value="${escapeHtml(item.title)}" /></strong>
+                                <button class="delete-link no-print" type="button" data-action="delete" data-id="${item.id}">Eliminar</button>
+                            </div>
+                            <div>
+                                <textarea class="table-input" data-id="${item.id}" data-field="description" rows="2">${escapeHtml(item.description)}</textarea>
+                            </div>
+                        </td>
+                        <td class="quantity"><input class="table-input" data-id="${item.id}" data-field="hours" type="number" min="0" step="0.5" value="${toNumber(item.hours)}" /></td>
+                        <td class="unit-price"><input class="table-input" data-id="${item.id}" data-field="rate" type="number" min="0" step="1" value="${toNumber(item.rate)}" /></td>
+                        <td class="total">${money(lineTotal)}</td>
+                    `;
+
+                    els.servicesBody.appendChild(tr);
+                });
+
+                // totales
+                const { totalHours, subtotal, iva, total } = compute();
+                els.totalHours.textContent = String(Math.round(totalHours * 10) / 10);
+                els.tableSubtotal.textContent = money(subtotal);
+                els.summarySubtotal.textContent = money(subtotal);
+
+                if (state.meta.applyIva) {
+                    els.ivaRow.style.display = 'flex';
+                    els.summaryIva.textContent = money(iva);
+                } else {
+                    els.ivaRow.style.display = 'none';
+                }
+
+                els.summaryTotal.textContent = money(total);
+            }
+
+            function escapeHtml(str) {
+                return String(str ?? '')
+                    .replaceAll('&', '&amp;')
+                    .replaceAll('<', '&lt;')
+                    .replaceAll('>', '&gt;')
+                    .replaceAll('"', '&quot;')
+                    .replaceAll("'", '&#39;');
+            }
+
+            function updateItem(id, field, value) {
+                const idx = state.items.findIndex((x) => x.id === id);
+                if (idx === -1) return;
+
+                if (field === 'hours' || field === 'rate') {
+                    state.items[idx][field] = Math.max(0, toNumber(value));
+                } else {
+                    state.items[idx][field] = String(value ?? '');
+                }
+
+                scheduleSave();
+                render();
+            }
+
+            function deleteItem(id) {
+                state.items = state.items.filter((x) => x.id !== id);
+                scheduleSave();
+                render();
+            }
+
+            function addItem({ title, description, hours, rate }) {
+                state.items.push({
+                    id: uid(),
+                    title: String(title ?? '').trim(),
+                    description: String(description ?? '').trim(),
+                    hours: Math.max(0, toNumber(hours)),
+                    rate: Math.max(0, toNumber(rate)),
+                });
+                scheduleSave();
+                render();
+            }
+
+            // Estado global en este IIFE
+            let state = loadState();
+            // si abres por primera vez en 2026, por defecto usa hoy
+            if (!state.meta.quoteDateIso) state.meta.quoteDateIso = todayIso();
+
+            // Eventos
+            document.addEventListener('input', (e) => {
+                const t = e.target;
+                if (!(t instanceof HTMLElement)) return;
+
+                const id = t.getAttribute('data-id');
+                const field = t.getAttribute('data-field');
+                if (id && field) {
+                    updateItem(id, field, t.value);
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                const t = e.target;
+                if (!(t instanceof HTMLElement)) return;
+
+                const action = t.getAttribute('data-action');
+                if (action === 'delete') {
+                    const id = t.getAttribute('data-id');
+                    if (!id) return;
+                    const ok = window.confirm('¿Eliminar este servicio?');
+                    if (ok) deleteItem(id);
+                }
+            });
+
+            els.applyIva.addEventListener('change', () => {
+                state.meta.applyIva = els.applyIva.checked;
+                scheduleSave();
+                render();
+            });
+
+            els.resetBtn.addEventListener('click', () => {
+                const ok = window.confirm('Esto borrará lo guardado en este navegador. ¿Continuar?');
+                if (!ok) return;
+                try {
+                    localStorage.removeItem(STORAGE_KEY);
+                } catch (_) {}
+                state = defaultState();
+                scheduleSave();
+                render();
+            });
+
+            els.addServiceForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                addItem({
+                    title: els.newTitle.value,
+                    description: els.newDesc.value,
+                    hours: els.newHours.value,
+                    rate: els.newRate.value,
+                });
+
+                els.newTitle.value = '';
+                els.newDesc.value = '';
+                els.newHours.value = '1';
+                // mantén la tarifa como referencia
+                els.newTitle.focus();
+            });
+
+            // Render inicial
+            render();
+            setSaveStatus('Listo');
+        })();
+    </script>
 </body>
 </html>
