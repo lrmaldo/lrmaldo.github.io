@@ -293,17 +293,17 @@
         <!-- Portfolio Gallery -->
         <section id="portfolio" class="py-20 px-4 bg-gray-100">
             <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Portafolio de Proyectos</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
                 
                 <!-- Sattlink ERP -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/Sattlink%20ERP.png" alt="Sattlink ERP" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-56 overflow-hidden bg-gray-200 cursor-pointer" onclick="openGallery('sattlink')">
+                        <img src="img/portafolio/Sattlink%20ERP.png" alt="Sattlink ERP" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-800">Sattlink ERP & ISP Manager</h3>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Sistema de misión crítica para ISPs. Gestiona +5,000 clientes, facturación masiva y cortes automáticos en routers MikroTik.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -311,22 +311,22 @@
                             <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-medium">MikroTik API</span>
                             <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">Prod. Activa</span>
                         </div>
-                        <a href="https://sattlink.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        <a href="https://sattlink.com" target="_blank" class="mt-auto inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                             Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Diner System -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/diner%20sistema%20de%20prestamos.png" alt="Diner - Sistema Financiero" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative h-56 overflow-hidden bg-gray-200 cursor-pointer" onclick="openGallery('diner')">
+                        <img src="img/portafolio/diner%20sistema%20de%20prestamos.png" alt="Diner - Sistema Financiero" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                          <div class="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full shadow-md z-10">En Producción</div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-800">Diner - Sistema Financiero</h3>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Motor de cálculo financiero para préstamos y créditos. Automatiza amortizaciones complejas, cálculo de morosidad y reportes de cobranza.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -334,43 +334,44 @@
                             <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-xs font-medium">Livewire</span>
                             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Fintech</span>
                         </div>
-                        <a href="https://dinercontigo.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        <a href="https://dinercontigo.com" target="_blank" class="mt-auto inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                             Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- App Móvil -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/capturas%20app%20movil/WhatsApp%20Image%202026-02-02%20at%2010.11.57%20AM.jpeg" alt="App Móvil ISP" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <!-- Sattlink Movil -->
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-56 overflow-hidden bg-gray-50 border-b border-gray-100 cursor-pointer" onclick="openGallery('app')">
+                        <img src="img/portafolio/capturas%20app%20movil/WhatsApp%20Image%202026-02-02%20at%2010.11.57%20AM.jpeg" alt="Sattlink Móvil" class="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
+                        <div class="absolute bottom-2 right-2 bg-gray-800/80 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm"><i class="fas fa-images mr-1"></i> Ver Galería</div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">App Usuarios ISP</h3>
-                        <p class="text-gray-600 text-sm mb-4">
-                            Aplicación nativa para autogestión de usuarios. Integración deep-link con pasarelas de pago y notificaciones push en tiempo real.
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Sattlink Móvil</h3>
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
+                             App nativa para consulta de saldo, consumo de datos, recargas y visualización de paquetes disponibles. Integración con pasarelas de pago.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">React Native</span>
                             <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs font-medium">Openpay</span>
                             <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">API</span>
                         </div>
-                         <button class="inline-flex items-center text-gray-400 font-semibold cursor-not-allowed">
-                            App Privada <i class="fas fa-lock ml-2"></i>
+                         <button onclick="openGallery('app')" class="mt-auto inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition-colors text-left w-full">
+                            Ver capturas <i class="fas fa-expand ml-2"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- i-Free Hotspot -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/ifree%20hotspot/i%20free%20dashboard.png" alt="i-Free Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-56 overflow-hidden bg-gray-200 cursor-pointer" onclick="openGallery('ifree')">
+                        <img src="img/portafolio/ifree%20hotspot/i%20free%20dashboard.png" alt="i-Free Dashboard" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-800">i-Free Hotspot</h3>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Portal cautivo inteligente y dashboard administrativo. Gestiona sesiones Radius, analíticas de conexión y campañas publicitarias.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -378,21 +379,21 @@
                             <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-medium">Radius</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Analytics</span>
                         </div>
-                        <a href="https://i-free.com.mx" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        <a href="https://i-free.com.mx" target="_blank" class="mt-auto inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                             Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Grúas Frontera -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/gruas%20frontera.png" alt="Grúas Frontera Mapa" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-56 overflow-hidden bg-gray-200 cursor-pointer" onclick="openGallery('gruas')">
+                        <img src="img/portafolio/gruas%20frontera.png" alt="Grúas Frontera Mapa" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-800">Grúas Frontera SaaS</h3>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             ERP Logístico para servicios de remolque. Incluye geolocalización de unidades, inventario de corralón y facturación 4.0.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -400,21 +401,21 @@
                             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Maps API</span>
                             <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">SaaS</span>
                         </div>
-                        <a href="https://gruasfrontera.com" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                        <a href="https://gruasfrontera.com" target="_blank" class="mt-auto inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                             Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Ixxi Tecnología -->
-                <div class="group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="img/portafolio/ixxi%20tecnlogia.png" alt="Ixxi Dashboard" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="group h-full flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-56 overflow-hidden bg-gray-200 cursor-pointer" onclick="openGallery('ixxi')">
+                        <img src="img/portafolio/ixxi%20tecnlogia.png" alt="Ixxi Dashboard" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-bold mb-3 text-gray-800">Ixxi Tecnología</h3>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Plataforma de generación de Landing Pages con Dashboard CMS configurable. Permite a clientes administrar contenido dinámico.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
@@ -422,7 +423,7 @@
                             <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-medium">Livewire</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Tailwind</span>
                         </div>
-                         <a href="https://ixxitecnologia.com/" target="_blank" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                         <a href="https://ixxitecnologia.com/" target="_blank" class="mt-auto inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                             Ver proyecto <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -457,6 +458,104 @@
 
         // Initialize AOS
         AOS.init();
+    </script>
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white hover:text-gray-300 z-50 bg-black/20 rounded-full p-2 transition-colors">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        
+        <button onclick="prevImage()" class="modal-nav hidden absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-3 z-50 bg-black/50 rounded-full hover:bg-black/70 transition-all">
+            <i class="fas fa-chevron-left text-2xl"></i>
+        </button>
+        
+        <div class="relative max-w-6xl max-h-[90vh] w-full flex items-center justify-center">
+            <img id="modalImage" src="" alt="Project Preview" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
+        </div>
+
+        <button onclick="nextImage()" class="modal-nav hidden absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 p-3 z-50 bg-black/50 rounded-full hover:bg-black/70 transition-all">
+            <i class="fas fa-chevron-right text-2xl"></i>
+        </button>
+    </div>
+
+    <script>
+        // Gallery Data
+        const galleries = {
+            'sattlink': ['img/portafolio/Sattlink%20ERP.png'],
+            'diner': ['img/portafolio/diner%20sistema%20de%20prestamos.png'],
+            'app': [
+                'img/portafolio/capturas%20app%20movil/WhatsApp%20Image%202026-02-02%20at%2010.11.57%20AM.jpeg',
+                'img/portafolio/capturas%20app%20movil/WhatsApp%20Image%202026-02-02%20at%2010.11.57%20AM%20(1).jpeg'
+            ],
+            'ifree': ['img/portafolio/ifree%20hotspot/i%20free%20dashboard.png'],
+            'gruas': ['img/portafolio/gruas%20frontera.png'],
+            'ixxi': ['img/portafolio/ixxi%20tecnlogia.png']
+        };
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        function openGallery(id) {
+            if(!galleries[id]) return;
+            currentGallery = galleries[id];
+            currentIndex = 0;
+            updateModalImage();
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('hidden');
+            // Animation
+            modal.querySelector('div.relative').classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.querySelector('div.relative').classList.remove('scale-95', 'opacity-0');
+                modal.querySelector('div.relative').classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextImage() {
+            if(currentGallery.length <= 1) return;
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateModalImage();
+        }
+
+        function prevImage() {
+            if(currentGallery.length <= 1) return;
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            const img = document.getElementById('modalImage');
+            img.src = currentGallery[currentIndex];
+            
+            // Hide/Show navigation if single image
+            const navButtons = document.querySelectorAll('.modal-nav');
+            navButtons.forEach(btn => {
+                if(currentGallery.length > 1) {
+                    btn.classList.remove('hidden');
+                } else {
+                    btn.classList.add('hidden');
+                }
+            });
+        }
+
+        // Close on escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        // Close on click outside
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
